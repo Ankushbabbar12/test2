@@ -43,6 +43,13 @@ let movies = [coda; belfast; dontLookUp; driveMyCar; dune; kingRichard; licorice
 printfn "Total movies: %A" (List.map (fun movie -> movie.Name) movies)
 let oscarwin = List.filter (fun movie -> movie.IMDBRating > 7.4) movies
 printfn "Oscar Winners: %A" (List.map (fun movie -> movie.Name) oscarwin)
+let cal runLength =
+    let hours = runLength / 60
+    let minutes = runLength % 60
+    sprintf "%dh %dmin" hours minutes
+
+let calRunLengths = List.map (fun movie -> cal movie.RunLength) movies
+printfn "Converted Run Lengths: %A" calRunLengths
 
 
 
