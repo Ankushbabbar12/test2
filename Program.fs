@@ -41,18 +41,6 @@ let nightmareAlley = { Name = "Nightmare Alley"; RunLength = 150; Genre = Thrill
 
 let movies = [coda; belfast; dontLookUp; driveMyCar; dune; kingRichard; licoricePizza; nightmareAlley]
 
-let probableOscarWinners = List.filter (fun movie -> movie.IMDBRating > 7.4) movies
-
-let cal runLength =
-    let hours = runLength / 60
-    let minutes = runLength % 60
-    sprintf "%dh %dmin" hours minutes
-
-let convertedRunLengths = List.map (fun movie -> cal movie.RunLength) movies
-
-printfn "Probable Oscar Winners: %A" probableOscarWinners
-printfn "Converted Run Lengths: %A" convertedRunLengths
-
 
 
 
